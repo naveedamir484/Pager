@@ -8,20 +8,20 @@ Bluetooth channel.
 <hr></hr>
  <br>
   <p align="center">
- <kbd><img src="images/3.png" width="600" ></kbd>
+ <kbd><img src="images/3.jpg" width="600" ></kbd>
  </p>
   <br>
   <hr></hr>
    <br>
  <p align="center">
- <kbd><img src="images/4.png" width="600" ></kbd>
+ <kbd><img src="images/4.jpg" width="600" ></kbd>
  </p>
    <br>
   <hr></hr>
   <br>
  <p align="center">
- <kbd><img src="images/1.png" width="350" ></kbd>
- <kbd><img src="images/2.png" width="350" ></kbd>
+ <kbd><img src="images/1.jpg" width="350" ></kbd>
+ <kbd><img src="images/2.jpg" width="350" ></kbd>
 </p>
 <br>
 <hr></hr>
