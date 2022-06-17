@@ -1,0 +1,451 @@
+/*****************************************************
+This program was produced by the
+CodeWizardAVR V2.05.3 Standard
+Automatic Program Generator
+© Copyright 1998-2011 Pavel Haiduc, HP InfoTech s.r.l.
+http://www.hpinfotech.com
+
+Project : 
+Version : 
+Date    : 05-10-2018
+Author  : Naveed Amir
+Company : HP
+Comments: 
+
+
+Chip type               : ATmega16
+Program type            : Application
+AVR Core Clock frequency: 16.000000 MHz
+Memory model            : Small
+External RAM size       : 0
+Data Stack size         : 256
+*****************************************************/
+
+#include <mega16.h>    
+#include <delay.h>
+#include <stdio.h>
+#include <alcd.h>
+
+char s[16];
+void scan();
+     
+                            
+ void main(void)
+{
+
+PORTA=0x00;
+DDRA=0x00;
+PORTB=0x00;
+DDRB=0x00;
+PORTC=0x00;
+DDRC=0x00;
+PORTD=0x00;
+DDRD=0x00;
+
+TCCR0=0x00;
+TCNT0=0x00;
+OCR0=0x00;
+
+TCCR1A=0x00;
+TCCR1B=0x00;
+TCNT1H=0x00;
+TCNT1L=0x00;
+ICR1H=0x00;
+ICR1L=0x00;
+OCR1AH=0x00;
+OCR1AL=0x00;
+OCR1BH=0x00;
+OCR1BL=0x00;
+
+ASSR=0x00;
+TCCR2=0x00;
+TCNT2=0x00;
+OCR2=0x00;
+
+MCUCR=0x00;
+MCUCSR=0x00;
+TIMSK=0x00;
+UCSRB=0x00;
+ACSR=0x80;
+SFIOR=0x00;
+ADCSRA=0x00;
+
+SPCR=0x00;
+TWCR=0x00;
+lcd_init(16);             
+DDRD=0b00001111;
+     
+ 
+	while (1){     
+ 
+     		PORTD=0b11111111;   
+     		scan();    
+         
+	}     
+}
+
+
+
+void scan(){ 
+
+        
+static  int i=0 ;    
+static int j=0;
+              
+    
+                                                
+PORTD.0=0;  PORTD.1=1; PORTD.2=1; PORTD.3=1; /////////////////////////////////////////////////////////putting the row 1 to o or ground
+
+
+ 
+    if(PIND.4==0){delay_ms(300); while(PIND.4==1){lcd_puts("3");            ///////////////////////////////////// for key 3
+       i=i+1; 
+      lcd_gotoxy(i,j);  
+       break;}
+          }      
+
+   if(PIND.4==0){delay_ms(25); while(PIND.4==0){ 
+        
+        if(PIND.4==0)  {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("g");
+        delay_ms(600);
+        i++; } 
+              
+        if(PIND.4==1) break;   
+        if(PIND.4==0)i--; 
+        if(PIND.4==0)
+       {lcd_gotoxy(i,j) ;
+        lcd_puts("h");
+        delay_ms(600);
+        i++; }   
+              
+        if(PIND.4==1) break;
+        if(PIND.4==0)i--;
+        if(PIND.4==0)
+        {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("i");
+        delay_ms(600);
+        i++; }            
+        break;} }      
+           
+           
+      
+
+     if(PIND.5==0){delay_ms(300) ;while(PIND.5==1){lcd_puts("2");         /////////////////////////////////////////for key 2
+         i=i+1; 
+        lcd_gotoxy(i,j);                 
+        break;} }   
+     if(PIND.5==0){delay_ms(25); while(PIND.5==0){
+        if(PIND.5==0)  {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("d");
+        delay_ms(600);
+        i++; } 
+              
+        if(PIND.5==1) break;   
+        if(PIND.5==0)i--; 
+        if(PIND.5==0)
+       {lcd_gotoxy(i,j) ;
+        lcd_puts("e");
+        delay_ms(600);
+        i++; }   
+              
+        if(PIND.5==1) break;
+        if(PIND.5==0)i--;
+        if(PIND.5==0)
+        {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("f");
+        delay_ms(600);
+        i++; }            
+        break;}   }       
+        
+
+        
+               
+    if(PIND.6==0){delay_ms(300) ;while(PIND.6==1){lcd_puts("1");  //////////////////////////////////////////for key 1
+        i=i+1; 
+        lcd_gotoxy(i,j);               
+        break;}   }       
+    if(PIND.6==0){delay_ms(25); while(PIND.6==0){
+        if(PIND.6==0)  {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("a");
+        delay_ms(600);
+        i++; } 
+              
+        if(PIND.6==1) break;   
+        if(PIND.6==0)i--; 
+        if(PIND.6==0)
+       {lcd_gotoxy(i,j) ;
+        lcd_puts("b");
+        delay_ms(600);
+        i++; }   
+              
+        if(PIND.6==1) break;
+        if(PIND.6==0)i--;
+        if(PIND.6==0)
+        {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("c");
+        delay_ms(600);
+        i++; }            
+        break;}   } 
+        
+                
+  if(PIND.7==0){delay_ms(25); while(PIND.7==1){lcd_clear();   /////////////////////////////////////////////////////// clear the whole screen
+           i=1;j=0;
+           lcd_gotoxy(i,j);
+           
+        break;} 
+           }
+           
+                                                                 
+               
+         
+           
+ PORTD.0=1;  PORTD.1=0; PORTD.2=1; PORTD.3=1;   ////////////////////////////////////////////setting the row two to zero or ground 
+ 
+  if(PIND.4==0){ delay_ms(300); while(PIND.4==1){lcd_puts("6");  /////////////////////////////////////// for key 6
+        i=i+1; 
+        lcd_gotoxy(i,j);             
+        break;}  }     
+   if(PIND.4==0){delay_ms(25); while(PIND.4==0){
+        if(PIND.4==0)  {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("p");
+        delay_ms(600);
+        i++; } 
+              
+        if(PIND.4==1) break;   
+        if(PIND.4==0)i--; 
+        if(PIND.4==0)
+       {lcd_gotoxy(i,j) ;
+        lcd_puts("q");
+        delay_ms(600);
+        i++; }   
+              
+        if(PIND.4==1) break;
+        if(PIND.4==0)i--;
+        if(PIND.4==0)
+        {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("r");
+        delay_ms(600);
+        i++; }            
+        break;}   }   
+        
+
+             
+   if(PIND.5==0){delay_ms(300) ;while(PIND.5==1){lcd_puts("5"); ////////////////////////////////////////////////for key 5 
+        i=i+1; 
+        lcd_gotoxy(i,j);               
+        break;}  }
+   if(PIND.5==0){delay_ms(25); while(PIND.5==0){
+        if(PIND.5==0)  {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("m");
+        delay_ms(600);
+        i++; } 
+              
+        if(PIND.5==1) break;   
+        if(PIND.5==0)i--; 
+        if(PIND.5==0)
+       {lcd_gotoxy(i,j) ;
+        lcd_puts("n");
+        delay_ms(600);
+        i++; }   
+              
+        if(PIND.5==1) break;
+        if(PIND.5==0)i--;
+        if(PIND.5==0)
+        {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("o");
+        delay_ms(600);
+        i++; }            
+        break;}   } 
+           
+ if(PIND.6==0){delay_ms(300) ;while(PIND.6==1){lcd_puts("4");  //////////////////////////////////////////////for key 4
+        i=i+1; 
+        lcd_gotoxy(i,j);          
+        break;} } 
+  if(PIND.6==0){delay_ms(25); while(PIND.6==0){
+        if(PIND.6==0)  {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("j");
+        delay_ms(600);
+        i++; } 
+              
+        if(PIND.6==1) break;   
+        if(PIND.6==0)i--; 
+        if(PIND.6==0)
+       {lcd_gotoxy(i,j) ;
+        lcd_puts("k");
+        delay_ms(600);
+        i++; }   
+              
+        if(PIND.6==1) break;
+        if(PIND.6==0)i--;
+        if(PIND.6==0)
+        {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("l");
+        delay_ms(600);
+        i++; }            
+        break;}   }       
+        
+        
+ if(PIND.7==0){delay_ms(25); while(PIND.7==1){        ///////////////////////////////////////for back space  or like a delete button    
+        i=i-1;
+        lcd_gotoxy(i,j);  
+        lcd_puts(" "); 
+        lcd_gotoxy(i,j);                                                           
+        break;} 
+          }
+                                         
+        
+           
+ PORTD.0=1;  PORTD.1=1; PORTD.2=0; PORTD.3=1;    
+   
+  if(PIND.4==0){delay_ms(300); while(PIND.4==1){lcd_puts("9");  /////////////////////////////////////////////////////for key 9   
+        i=i+1; 
+        lcd_gotoxy(i,j);           
+        break;}     } 
+  if(PIND.4==0){delay_ms(25); while(PIND.4==0){
+        if(PIND.4==0)  {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("y");
+        delay_ms(600);
+        i++; } 
+              
+        if(PIND.4==1) break;   
+        if(PIND.4==0)i--; 
+        if(PIND.4==0)
+       {lcd_gotoxy(i,j) ;
+        lcd_puts("z");
+        delay_ms(600);
+        i++; }   
+              
+        if(PIND.4==1) break;
+        if(PIND.4==0)i--;
+        if(PIND.4==0)
+        {
+        lcd_gotoxy(i,j) ;
+        lcd_puts(",");
+        delay_ms(600);
+        i++; }            
+        break;}   }   
+              
+        
+if(PIND.5==0){delay_ms(300) ;while(PIND.5==1){lcd_puts("8");  //////////////////////////////////////////////////////for key 8
+        i=i+1; 
+        lcd_gotoxy(i,j);               
+        break;}    }   
+  if(PIND.5==0){delay_ms(25); while(PIND.5==0){
+        if(PIND.5==0)  {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("v");
+        delay_ms(600);
+        i++; } 
+              
+        if(PIND.5==1) break;   
+        if(PIND.5==0)i--; 
+        if(PIND.5==0)
+       {lcd_gotoxy(i,j) ;
+        lcd_puts("w");
+        delay_ms(600);
+        i++; }   
+              
+        if(PIND.5==1) break;
+        if(PIND.5==0)i--;
+        if(PIND.5==0)
+        {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("x");
+        delay_ms(600);
+        i++; }            
+        break;}   } 
+        
+        
+        
+                       
+if(PIND.6==0){delay_ms(300) ;while(PIND.6==1){lcd_puts("7"); /////////////////////////////////////////////////////////for key 7
+        i=i+1; 
+        lcd_gotoxy(i,j);            
+        break;}   }       
+        
+if(PIND.6==0){delay_ms(25); while(PIND.6==0){
+        if(PIND.6==0)  {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("s");
+        delay_ms(600);
+        i++; } 
+              
+        if(PIND.6==1) break;   
+        if(PIND.6==0)i--; 
+        if(PIND.6==0)
+       {lcd_gotoxy(i,j) ;
+        lcd_puts("t");
+        delay_ms(600);
+        i++; }   
+              
+        if(PIND.6==1) break;
+        if(PIND.6==0)i--;
+        if(PIND.6==0)
+        {
+        lcd_gotoxy(i,j) ;
+        lcd_puts("u");
+        delay_ms(600);
+        i++; }            
+        break;}   }       
+                
+        
+  if(PIND.7==0){delay_ms(25); while(PIND.7==1){lcd_puts("_"); //////////////////////////////////////////////////// for space betwen letters
+       
+        i++; 
+         lcd_gotoxy(i,j);              
+        break;}   }
+                    
+ 
+ 
+ PORTD.0=1;  PORTD.1=1; PORTD.2=1; PORTD.3=0; 
+   
+ 
+if(PIND.4==0){delay_ms(25); while(PIND.4==1){lcd_puts("*"); ////////////////////////////////////////////astric key
+        i=i+1; 
+        lcd_gotoxy(i,j);                         
+        break;}     }   
+            
+if(PIND.5==0){delay_ms(25) ;while(PIND.5==1){lcd_puts("0"); ///////////////////////////////////////////o key
+        i=i+1; 
+        lcd_gotoxy(i,j);
+        break;}    }  
+               
+if(PIND.6==0){delay_ms(25) ;while(PIND.6==1){lcd_puts("#");///////////////////////////////////////////////# key
+        i=i+1; 
+        lcd_gotoxy(i,j);
+        break;}   }      
+        
+if(PIND.7==0){delay_ms(25); while(PIND.7==1){lcd_puts("D");///////////////////////////////////////////////////////// free key as D
+        i=i+1;                                             
+        lcd_gotoxy(i,j);  
+        break;}   }      
+        
+        
+        
+  if(i==15 && j==0)
+   {  i=0;
+     j=1;
+         }
+  if(i==15 && j==1){
+     lcd_clear();
+      i=0  ;
+      j=0  ;  
+  }       
+   
+        
+}      
+      
