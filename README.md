@@ -5,6 +5,8 @@ Fabricated end-to-end communication device which allows a user to communicate wi
 key press and convert into a character, consequently append to main "String" and further transmit over
 Bluetooth channel.
 
+<h6>This project could be implemented using Arduino and logic for key-press and its detection would remain same</h6>
+
 <hr></hr>
  <br>
   <p align="center">
